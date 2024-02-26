@@ -1,0 +1,67 @@
+{
+	// Define Tab Size = 2 Spaces (Half of the Default Size)
+	"editor.tabSize": 2,
+
+	// Disable Tab To Space Conversion
+	"editor.insertSpaces": false,
+
+	// Config Default End Of Line Formatting
+	"files.eol": "\n",
+
+	// Enable Format On Save
+	"editor.formatOnSave": true,
+
+	// Make ESLint fix all the things that he can on save (like prettier formating)
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always"
+	},
+
+	// Make VSCode understand this files as files of this languages
+	"files.associations": {
+		".prettierignore": "ignore",
+		".lintstagedrc": "json",
+		".env*": "env"
+	},
+	"material-icon-theme.languages.associations": {
+		"env": "tune"
+	},
+
+	// ================ Languages General Config ====================
+
+	// TypeScript
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.suggest.autoImports": true,
+	// JavaScript
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"javascript.suggest.autoImports": true,
+
+	// =========== Plugins & Extensions General Config ===============
+
+	// Eslint
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+
+	// Code Spell Checker
+	"cSpell.words": [
+		"backreference",
+		"camelcase",
+		"dbaeumer",
+		"eqeqeq",
+		"eslintconfig",
+		"Guilded",
+		"iife",
+		"mischeck",
+		"nextjs",
+		"nonoctal",
+		"passhref",
+		"polyfillio",
+		"rushstack",
+		"sonarjs",
+		"styleguide",
+		"econominhas"
+	]
+}
