@@ -44,6 +44,18 @@
 		"typescript",
 		"typescriptreact"
 	],
+	"[javascript]": {
+		"editor.defaultFormatter": null
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": null
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": null
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": null
+	},
 
 	// Code Spell Checker
 	"cSpell.words": [

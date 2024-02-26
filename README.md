@@ -4,7 +4,7 @@
 
 # Econominhas - Style Guide
 
-[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-ECONOMINHAS-01d2ce?style=for-the-badge)](https://github.com/econominhas/eslint-config)
+[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-ECONOMINHAS-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
 [![npm](https://img.shields.io/npm/v/@econominhas/eslint-config.svg?style=for-the-badge&color=CC3534)](https://www.npmjs.com/package/@econominhas/eslint-config)
 [![Downloads](https://img.shields.io/npm/dw/@econominhas/eslint-config.svg?style=for-the-badge)](https://www.npmjs.com/package/@econominhas/eslint-config)
 
@@ -14,28 +14,28 @@ In this package, you can find the **Econominhas Style Guide**. We try to keep a 
 
 ## Badges
 
-[![plastic](https://img.shields.io/badge/style%20guide-Econominhas-01d2ce?style=plastic)](https://github.com/econominhas/eslint-config)
+[![plastic](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=plastic)](https://github.com/econominhas/eslint-config)
 
 ```md
-[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-01d2ce?style=plastic)](https://github.com/econominhas/eslint-config)
+[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=plastic)](https://github.com/econominhas/eslint-config)
 ```
 
-[![flat](https://img.shields.io/badge/style%20guide-Econominhas-01d2ce?style=flat)](https://github.com/econominhas/eslint-config)
+[![flat](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=flat)](https://github.com/econominhas/eslint-config)
 
 ```md
-[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-01d2ce?style=flat)](https://github.com/econominhas/eslint-config)
+[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=flat)](https://github.com/econominhas/eslint-config)
 ```
 
-[![square](https://img.shields.io/badge/style%20guide-Econominhas-01d2ce?style=square)](https://github.com/econominhas/eslint-config)
+[![square](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=square)](https://github.com/econominhas/eslint-config)
 
 ```md
-[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-01d2ce?style=square)](https://github.com/econominhas/eslint-config)
+[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=square)](https://github.com/econominhas/eslint-config)
 ```
 
-[![for-the-badge](https://img.shields.io/badge/style%20guide-TECHMMUNITY-01d2ce?style=for-the-badge)](https://github.com/econominhas/eslint-config)
+[![for-the-badge](https://img.shields.io/badge/style%20guide-TECHMMUNITY-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
 
 ```md
-[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-TECHMMUNITY-01d2ce?style=for-the-badge)](https://github.com/econominhas/eslint-config)
+[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-TECHMMUNITY-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
 ```
 
 ## Why use this config?
