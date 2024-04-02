@@ -45,16 +45,16 @@
 		"typescriptreact"
 	],
 	"[javascript]": {
-		"editor.defaultFormatter": null
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[typescript]": {
-		"editor.defaultFormatter": null
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[javascriptreact]": {
-		"editor.defaultFormatter": null
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[typescriptreact]": {
-		"editor.defaultFormatter": null
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 
 	// Code Spell Checker
