@@ -30,6 +30,18 @@ module.exports = {
 			},
 		},
 		{
+			files: ["**/*.tsx"],
+			rules: {
+				"@typescript-eslint/naming-convention": [
+					"warn",
+					{
+						selector: "function",
+						format: ["camelCase", "PascalCase"],
+					},
+				],
+			},
+		},
+		{
 			files: ["**/migrations/*.{js,ts}"],
 			rules: {
 				"@typescript-eslint/quotes": "off",
@@ -42,7 +54,7 @@ module.exports = {
 			},
 		},
 		{
-			files: ["**/*.spec.ts", "**/*.test.ts"],
+			files: ["**/*.{spec,test}.ts"],
 			rules: {
 				"@typescript-eslint/no-magic-numbers": "off",
 				"@typescript-eslint/no-explicit-any": "off",

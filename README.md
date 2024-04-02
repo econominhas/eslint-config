@@ -51,29 +51,29 @@ In this package, you can find the **Econominhas Style Guide**. We try to keep a 
 This config needs prettier and eslint to work, as it is only a config and not the real package.
 
 ```sh
-yarn add -D @econominhas/eslint-config eslint prettier
+pnpm add -D @econominhas/eslint-config eslint prettier
 ```
 
 **Obs:** If you are using **VSCode**, you may need/want to do some [extra steps](#extra---vscode-tips--tricks).
 
 ## Basic Usage
 
-1 - Create a `.eslintrc.json` file in the root of your project
+1 - Create a `.eslintrc.js` file in the root of your project
 
 2 - Put the following content inside the file:
 
-```json
-{
-	"root": true,
-	"extends": "@econominhas"
-}
+```js
+module.exports = {
+	root: true,
+	extends: "@econominhas",
+};
 ```
 
 3 - Restart VSCode, and it's done!
 
 ## Modules
 
-**Alert:** After any change at `.eslintrc.json` file, you should restart VSCode to ensure that it's working properly. This is a limitation of ESLint/VSCode, not our config.
+**Alert:** After any change at `.eslintrc.js` file, you should restart VSCode to ensure that it's working properly. This is a limitation of ESLint/VSCode, not our config.
 
 **Alert:** The **common module** must **ALWAYS** be extend, and must **ALWAYS** be the fist one.
 
@@ -91,13 +91,13 @@ The common module is the default rules used by every javascript project. It does
 
 #### Usage
 
-Create an `.eslintrc.json` file in the root folder of your package and add this content to it:
+Create an `.eslintrc.js` file in the root folder of your package and add this content to it:
 
-```json
-{
-	"root": true,
-	"extends": "@econominhas"
-}
+```js
+module.exports = {
+	root: true,
+	extends: "@econominhas",
+};
 ```
 
 </details>
@@ -114,16 +114,24 @@ Specific configs to projects that uses Jest.
 
 #### Usage
 
-Create an `.eslintrc.json` file in the root folder of your package and add this content to it:
+Create an `.eslintrc.js` file in the root folder of your package and add this content to it:
 
-```json
-{
-	"root": true,
-	"extends": [
+```js
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-require-imports */
+
+module.exports = {
+	root: true,
+	extends: [
 		"@econominhas", // The common module always should be extended!
-		"@econominhas/eslint-config/jest"
-	]
-}
+		"@econominhas/eslint-config/jest",
+	],
+	settings: {
+		jest: {
+			version: require("jest/package.json").version,
+		},
+	},
+};
 ```
 
 </details>
@@ -140,16 +148,33 @@ Specific configs for typescript projects.
 
 #### Usage
 
-Create an `.eslintrc.json` file in the root folder of your package and add this content to it:
+Create an `.eslintrc.js` file in the root folder of your package and add this content to it:
 
-```json
-{
-	"root": true,
-	"extends": [
+```js
+module.exports = {
+	root: true,
+	extends: [
 		"@econominhas", // The common module always should be extended!
-		"@econominhas/eslint-config/typescript"
-	]
-}
+		"@econominhas/eslint-config/typescript",
+	],
+};
+```
+
+#### Using another `tsconfig` for linting
+
+By default, this module uses `tsconfig.json` file for configuring the typescript for the project, but you can use another file specifically for linting.
+
+To use another file, simply add this to your `.eslintrc.js` file:
+
+```js
+/// .eslintrc.js
+module.exports = {
+	// ...
+	parserOptions: {
+		project: "tsconfig.lint.json", // <<< Name of the tsconfig file here (Must be in the root folder of the project)
+	},
+	// ...
+};
 ```
 
 </details>
@@ -158,57 +183,51 @@ Create an `.eslintrc.json` file in the root folder of your package and add this 
 
 You can safely combine some modules, like this:
 
-```json
-{
-	"root": true,
-	"extends": [
+```js
+module.exports = {
+	root: true,
+	extends: [
 		"@econominhas", // The common module always should be extended!
 		"@econominhas/eslint-config/typescript",
-		"@econominhas/eslint-config/jest"
-	]
-}
+		"@econominhas/eslint-config/jest",
+	],
+};
 ```
 
 ## Warnings
-
-### Problems with Prettier
-
-If you are using the VSCode Prettier Extension, you need to disable it, because this package already configs the prettier and uses it under the hood. You can also **delete any prettier configuration files** from your project.
-
-To disable Prettier, you just need to add this to the project's `.vscode/settings.json` file:
-
-```json
-{
-	"[javascript]": {
-		"editor.defaultFormatter": null
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": null
-	},
-	"[javascriptreact]": {
-		"editor.defaultFormatter": null
-	},
-	"[typescriptreact]": {
-		"editor.defaultFormatter": null
-	}
-}
-```
 
 ## Extra - VSCode Tips & Tricks
 
 ### See the errors and warnings
 
-- Use `Ctrl + Shift + X`
-- Search for `dbaeumer.vscode-eslint`
-- Install the extension
+<img src="https://dbaeumer.gallerycdn.vsassets.io/extensions/dbaeumer/vscode-eslint/3.0.5/1712051003124/Microsoft.VisualStudio.Services.Icons.Default" width="50" height="50">
 
-### Auto fix issues
+- Go to the VSCode Extensions Store
+- Search for `dbaeumer.vscode-eslint` and install it
+
+### Auto fix (most of) errors and warnings
 
 Add this to the project's `.vscode/settings.json` file:
 
 ```json
-// Make ESLint fix all the things that he can on save (like prettier formatting)
-"editor.codeActionsOnSave": {
-	"source.fixAll.eslint": true
-},
+{
+	// Make ESLint fix all the things that he can on save (like prettier formatting)
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always"
+	},
+
+	// Change the default formatter to the ESLint Extension
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	}
+}
 ```

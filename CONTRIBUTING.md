@@ -140,9 +140,9 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/econom
 
 To test this package:
 
-1. If you are testing and making changes, you may need run `yarn unlink`, but for your first time, you can ignore this
-2. Run `yarn lk`
-3. Go to another project that has some files with errors where you can test the rules and run `yarn link @econominhas/eslint-config`
+1. If you are testing and making changes, you may need run `pnpm unlink`, but for your first time, you can ignore this
+2. Run `pnpm run lk`
+3. Go to another project that has some files with errors where you can test the rules and run `pnpm link --global @econominhas/eslint-config`
 4. And it's done! Just give a look at the project and see if everything is working like you want.
 
 **Tip:** You can use `npx eslint .` to lint the project automatically
