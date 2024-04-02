@@ -1,5 +1,3 @@
-/* eslint-disable no-magic-numbers */
-
 /*
  * @rushstack/eslint-patch is used to include plugins as dev
  * dependencies instead of imposing them as peer dependencies
@@ -10,7 +8,7 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 require("@rushstack/eslint-patch/custom-config-package-names");
 
 module.exports = {
-	plugins: ["import", "sonarjs", "filenames", "prettier"],
+	plugins: ["import", "sonarjs", "prettier"],
 	extends: ["eslint:recommended", "plugin:prettier/recommended", "prettier"],
 	settings: {
 		"import/resolver": {
@@ -27,20 +25,10 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ["**/migrations/*.{js,ts}"],
-			rules: {
-				/**
-				 * Plugin - Filename
-				 *
-				 * https://github.com/selaux/eslint-plugin-filenames#rules
-				 */
-				"filenames/match-regex": "off",
-			},
-		},
-		{
 			files: ["**/*.spec.{js,ts}", "**/*.test.{js,ts}"],
 			rules: {
 				"no-magic-numbers": "off",
+				"max-nested-callbacks": "off",
 			},
 		},
 		{
@@ -116,9 +104,8 @@ module.exports = {
 		],
 		"max-depth": ["error", 5],
 		"max-nested-callbacks": ["error", 3],
-		"max-params": ["error", 5],
+		"max-params": ["warn", 3],
 		"multiline-comment-style": ["error", "starred-block"],
-		"new-cap": "error",
 		"no-bitwise": "error",
 		"no-caller": "error",
 		"no-case-declarations": "error",
@@ -152,7 +139,6 @@ module.exports = {
 		"no-unused-expressions": "error",
 		"no-useless-computed-key": "error",
 		"no-useless-concat": "error",
-		"no-useless-constructor": "error",
 		"no-useless-rename": "error",
 		"no-var": "error",
 		"object-shorthand": "error",
@@ -166,7 +152,6 @@ module.exports = {
 		"prefer-template": "error",
 		"radix": ["error", "as-needed"],
 		"require-await": "error",
-		"sort-imports": "error",
 		"symbol-description": "error",
 		"yoda": "error",
 		/**
@@ -227,7 +212,7 @@ module.exports = {
 		"import/order": [
 			"error",
 			{
-				groups: [
+				"groups": [
 					"builtin",
 					"external",
 					"internal",
@@ -237,6 +222,7 @@ module.exports = {
 					"object",
 					"type",
 				],
+				"newlines-between": "always",
 			},
 		],
 		/**
@@ -272,11 +258,5 @@ module.exports = {
 		"sonarjs/prefer-object-literal": "error",
 		"sonarjs/prefer-single-boolean-return": "error",
 		"sonarjs/prefer-while": "error",
-		/**
-		 * Plugin - Filename
-		 *
-		 * https://github.com/selaux/eslint-plugin-filenames#rules
-		 */
-		"filenames/match-regex": ["error", "^[a-z0-9-]+$", true],
 	},
 };
