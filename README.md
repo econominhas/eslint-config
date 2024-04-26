@@ -1,6 +1,6 @@
 <div align="center">
 
-> Img
+<img src="https://avatars.githubusercontent.com/u/120692541?s=200&v=4" width="200" height="200">
 
 # Econominhas - Style Guide
 
@@ -32,10 +32,10 @@ In this package, you can find the **Econominhas Style Guide**. We try to keep a 
 [![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=square)](https://github.com/econominhas/eslint-config)
 ```
 
-[![for-the-badge](https://img.shields.io/badge/style%20guide-TECHMMUNITY-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
+[![for-the-badge](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
 
 ```md
-[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-TECHMMUNITY-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
+[![Style Guide: Econominhas](https://img.shields.io/badge/style%20guide-Econominhas-4B00FA?style=for-the-badge)](https://github.com/econominhas/eslint-config)
 ```
 
 ## Why use this config?
@@ -194,8 +194,6 @@ module.exports = {
 };
 ```
 
-## Warnings
-
 ## Extra - VSCode Tips & Tricks
 
 ### See the errors and warnings
@@ -207,6 +205,8 @@ module.exports = {
 
 ### Auto fix (most of) errors and warnings
 
+**Obs:** You need to have the ESLint extension installed.
+
 Add this to the project's `.vscode/settings.json` file:
 
 ```json
@@ -216,18 +216,18 @@ Add this to the project's `.vscode/settings.json` file:
 		"source.fixAll.eslint": "always"
 	},
 
-	// Change the default formatter to the ESLint Extension
+	// Remove formatter to avoid conflicts
 	"[javascript]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": null
 	},
 	"[typescript]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": null
 	},
 	"[javascriptreact]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": null
 	},
 	"[typescriptreact]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": null
 	}
 }
 ```
